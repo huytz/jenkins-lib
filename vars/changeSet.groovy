@@ -1,4 +1,6 @@
-// Check dirctory change
+// Check dirctory changes
+// Input your directory
+ 
 @NonCPS
 def call(String Dir='') {
   def changeLogSets = currentBuild.changeSets
