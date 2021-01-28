@@ -1,6 +1,6 @@
 void call(String Branch='') {
 
-    Map scmVars =  Map scmVars = checkout scm : [
+    Map scmVars = checkout scm : [
 					$class: 'GitSCM', 
                           		branches: [[name: Branch]], 
                           		doGenerateSubmoduleConfigurations: false,
