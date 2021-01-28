@@ -1,14 +1,10 @@
 void call(String Branch='') {
+
     Map scmVars =  Map scmVars = checkout scm : [
 					$class: 'GitSCM', 
                           		branches: [[name: Branch]], 
-                          		doGenerateSubmoduleConfigurations: false, 
-       			  		extensions: [[$class: 'SubmoduleOption',
-                                      		disableSubmodules: false,
-                                      		parentCredentials: false,
-                                      		recursiveSubmodules: true,
-                                      		reference: '',
-                                      		trackingSubmodules: false]],
+                          		doGenerateSubmoduleConfigurations: false,
+					extensions: [[$class: 'CleanCheckout']], 
                           		submoduleCfg: [],
                           		userRemoteConfigs: scm.userRemoteConfigs
 				]
